@@ -8,6 +8,7 @@ class Character:
     @property
     def name(self):
         return __name
+        
     @name.setter
     def name(self,name):
         if 2<len(name)<15:
@@ -25,7 +26,7 @@ class Character:
         ou non"""
         import random
         up_to_100=random.randint(1,100)
-        if(up_to_100 in range(1,101-self.agility)):
+        if up_to_100 in range(1,101-self.agility):
             return self.__attack
         else:
             return 0
