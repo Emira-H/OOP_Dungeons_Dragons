@@ -1,4 +1,6 @@
-from character.character import Character
+from character.wizzard import *
 
-c=Character("emira",400,80,10,5)
-print(c)
+c=Wizzard(50)
+c.name="emira"
+print(c.attack())
+print(c.name)
