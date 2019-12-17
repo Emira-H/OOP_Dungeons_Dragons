@@ -1,12 +1,21 @@
 class Character:
 
     def __init__(self,name,life,attack,agility,defense):
-        self.name=name
-        self._attack=attack
+        self.__name=name
+        self.__attack=attack
         self.agility=agility
         self.defense=defense
-
-
+    @property
+    def name(self):
+        return __name
+    @name.setter
+    def name(self,name):
+        if 2<len(name)<15:
+            self__name=name
+            return True
+        else:
+            return False
+        
     def skip(self):
         """je passe au tour suivant et renvoi zero"""
         return 0
@@ -17,7 +26,7 @@ class Character:
         import random
         up_to_100=random.randint(1,100)
         if(up_to_100 in range(1,101-self.agility)):
-            return self._attack
+            return self.__attack
         else:
             return 0
 
