@@ -14,6 +14,9 @@ class Wizzard(Character):
             elif self.mana<add_life:
                 self.life+=self.mana
                 self.mana=0
+                self.cheek_heal=False
+            return self.cheek_heal
+            
 
 
 
