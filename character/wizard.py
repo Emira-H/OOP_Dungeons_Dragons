@@ -7,7 +7,7 @@ class Wizard(Character):
         self.cheek_heal=True
     
     def heal(self,add_life):
-        if cheek_heal:
+        if self.cheek_heal:
             if self.mana>=add_life:
                 self.mana-=add_life
                 self.life+=add_life
@@ -16,6 +16,8 @@ class Wizard(Character):
                 self.mana=0
                 self.cheek_heal=False
             return self.cheek_heal
+    def __repr__(self):
+        return super().__repr__()+", mana ({})".format(self.mana)
             
 
 

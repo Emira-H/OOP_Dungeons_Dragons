@@ -2,10 +2,11 @@ class Character:
 
     def __init__(self,life,attack,defense,agility):
         self.__name=None
-        self.__attack=attack
-        self.agility=agility
-        self.defense=defense
         self.life=life
+        self.__attack=attack
+        self.defense=defense
+        self.agility=agility
+
     @property
     def name(self):
         return self.__name
@@ -32,7 +33,9 @@ class Character:
             return 0
         else:
             return self.__attack
-
+    def __repr__(self):
+        return "name ({}) , life ({}) , defense ({}) ,il a ({}%) de chance d'esquiver les attaques".format(
+            self.__name,self.life,self.defense,self.agility)
 
 
 

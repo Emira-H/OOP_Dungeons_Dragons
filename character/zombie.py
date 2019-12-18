@@ -4,3 +4,4 @@ class Zombie(Character):
     
     def __init__(self):
         super().__init__(600,15,15,5)
+        self.name="Zombie"
