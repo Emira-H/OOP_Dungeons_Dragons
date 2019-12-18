@@ -2,10 +2,10 @@ class Character:
 
     def __init__(self,life,attack,defense,agility):
         self.__name=None
-        self.life=life
         self.__attack=attack
         self.agility=agility
         self.defense=defense
+        self.life=life
     @property
     def name(self):
         return self.__name
@@ -28,10 +28,10 @@ class Character:
         import random
         """dans cette fonction une proba de 90% d'attaqué"""
         up_to_100=random.randint(1,100)
-        if up_to_100 in range(1,101-agility_adverse):
-            return self.__attack
-        else:
+        if up_to_100 in range(1,agility_adverse):
             return 0
+        else:
+            return self.__attack
 
 
 

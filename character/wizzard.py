@@ -2,7 +2,7 @@ from character.character import Character
 class Wizzard(Character):
 
     def __init__(self,mana):
-        super().__init__(600, 50, 80, 10)
+        super().__init__(600,20, 50,25)
         self.mana=mana
         self.cheek_heal=True
     
