@@ -27,28 +27,41 @@ class Arena:
 
     def combat(self,hero,ennemie):
         combatant = None
-        hero = self.combatant_1
-        ennemie = self.combatant_2
+        ennemie = None
 
-        if self.attack_or_escape == True
-        combatant = self.combatant_1
-        return combatant
-        
+        if self.attack_or_escape == True:
+            combatant = self.combatant_1
+            ennemie = self.combatant_2
+            return combatant
+            return ennemie
+            dommage(ennemie,combatant)
+            print(ennemie.life,combatant.life)
 
-
-    def dommage(self):
-        combatant = None
-
-        if defense <= 0:
-            life -= attack_adverse
-
-        elif defense >= attack_adverse:
-            defense -= attack_adverse
+            combatant = self.combatant_2
+            ennemie = self.combatant_1
+            return combatant
+            return ennemie
+            dommage(ennemie,combatant)
+            print(ennemie.life,combatant.life)
 
         else :
-            life -=(attack_adverse-defense)
-            defense = 0
+            print("vous fuyez !!!!!!!!!!")
+
+
+
+
+
+    def dommage(self,ennemie,combatant):
+
+        if ennemie.defense <= 0:
+            ennemie.life -= commbatant.attack
+
+        elif ennemie.defense >= commbatant.attack:
+            ennemie.defense -= commbatant.attack
+
+        else :
+            ennemie.life -=(commbatant.ennemie.defense)
+            ennemie.defense = 0
 
     def dead(self,combatant_1,combatant_2)
-
-    def
+        if 
