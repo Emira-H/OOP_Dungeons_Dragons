@@ -1,13 +1,13 @@
 from character import Character
-from wizzard import Wizzard
+
 
 class Arena(Character):
 
-    def __init__(self,life,defense,attack,agility,attack_adverse):
-        super().__init__(life,defense,attack,agility)
+    def __init__(self,):
+        super().__init__()
 
 
-    def dommage(self,life,defense,attack,agility,attack_adverse):
+    def dommage(self,):
 
         if defense <= 0:
             life -= attack_adverse
@@ -18,3 +18,4 @@ class Arena(Character):
         else :
             life -=(attack_adverse-defense)
             defense = 0
+    def
