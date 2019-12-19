@@ -43,9 +43,6 @@ class Arena:
                 
 
 
-
-
-   
     def coup_pc(self):
        
         """ le pc attaque d'abord une defense ensuite si la defense est epuisé attaque le life """
@@ -67,7 +64,6 @@ class Arena:
       
         """ la methode qui fait jouer les adversaire a tour de role """
         while self.player.life>0 and self.pc.life>0:
-            sleep(5)
             system("clear")
             self.coup_player()
             self.coup_pc()
