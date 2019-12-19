@@ -4,25 +4,20 @@ from factory import Factory
 class Arena:
 
     def __init__(self,combatant_1,combatant_2):
-        self.combatant_1 = self.player_choose
-        self.combatant_2 = self.pc_choose
+        self.combatant_1 = factory.player_choose
+        self.combatant_2 = factory.pc_choose
 
 
 
     def attack_or_escape(self,attack):
+        attack = input("2 choix s'offre a vous attaquer ")
         if attack == "o":
             self.attack_or_escape == True
             return self.attack_or_escape
         else :
             self.attack_or_escape == False
+            return self.attack_or_escape
 
-
-
-    def attack_adverse(self,attack_adverse):
-        hero = self.combatant_1
-        ennemie = self.combatant_2
-
-        self.attack_level = hero.character.attack
 
 
     def combat(self,hero,ennemie):
@@ -60,8 +55,12 @@ class Arena:
             ennemie.defense -= commbatant.attack
 
         else :
-            ennemie.life -=(commbatant.ennemie.defense)
+            ennemie.life -=(combatant.ennemie.defense)
             ennemie.defense = 0
 
-    def dead(self,combatant_1,combatant_2)
-        if 
+    def dead(self,vie_hero,vie_monstre):
+        vie_hero = self.combatant_1
+        vie_monstre = self.combatant_2
+
+        while vie_hero > 0 and vie_monstre > 0:
+            Arena.combat()

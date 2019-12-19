@@ -6,7 +6,7 @@ class Factory():
         self.pc_choose = None
 
     def enter_player(self,enter_player):
-        enter_player = input("choississez votre avatar entre warrior,wizard et archer"n/"--->")
+        enter_player = input("choississez votre avatar entre warrior,wizard et archer","--->")
 
         if enter_player == "warrior":
             self.player_choose = warrior()
