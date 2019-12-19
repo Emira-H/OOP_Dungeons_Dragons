@@ -18,10 +18,7 @@ class Character:
             return True
         else:
             return False
-        
-    def skip(self):
-        """je passe au tour suivant et renvoi zero"""
-        return 0
+
 
     def attack(self,agility_adverse):
         """je verifier en fonction de l'agilité s'il doit attaqé
@@ -29,7 +26,7 @@ class Character:
         import random
         """dans cette fonction une proba de 90% d'attaqué"""
         up_to_100=random.randint(1,100)
-        if up_to_100 in range(1,agility_adverse+1):
+        if up_to_100 in range(0,agility_adverse+1):
             return 0
         else:
             return self.__attack

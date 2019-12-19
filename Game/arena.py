@@ -1,7 +1,7 @@
 from time import sleep
 from os import system
 class Arena:
-    """ une classe qui semule une partie tant que il ya pas un perdu """
+    """ une classe qui simule une partie tant que il n'y a pas un perdant"""
     def __init__(self,player,pc):
         self.player=player
         self.pc=pc
@@ -14,7 +14,7 @@ class Arena:
         while respense not in ["a","e","s"]:
             respense=input("taper 'a' pour attaquer ou 'e' pour esquiver dans le cas de magicien vous pouver vous soinger 's': ").lower()
         if respense=="a":
-            attack= self.player.attack(self.pc.defense)
+            attack= self.player.attack(self.pc.agility)
             if attack==0:
                 print("{} a esquiver l'attaque de {} garce a son agility de {}".format(self.pc.name,self.player.name,self.pc.agility))
                 sleep(5)
@@ -49,7 +49,7 @@ class Arena:
     def coup_pc(self):
        
         """ le pc attaque d'abord une defense ensuite si la defense est epuisé attaque le life """
-        attack= self.pc.attack(self.player.defense)
+        attack= self.pc.attack(self.player.agility)
         if attack==0:
             print("{} a esquiver l'attaque de {} garce a son agility de {}".format(self.player.name,self.pc.name,self.player.agility))
             sleep(5)
