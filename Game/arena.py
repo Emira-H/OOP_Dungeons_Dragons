@@ -19,3 +19,4 @@ class Arena(Character):
             life -=(attack_adverse-defense)
             defense = 0
     def
+
