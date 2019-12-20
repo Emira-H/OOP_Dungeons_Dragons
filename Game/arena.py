@@ -1,4 +1,5 @@
-
+from factory import Factory
+from character.extends_of_character import *
 
 
 class Arena:
@@ -10,9 +11,9 @@ class Arena:
 
 
     def attack_or_escape(self):
-        attack = input("2 choix s'offre a vous entrez combattre ou fuir ")
-        if attack == "o":
+        attack = input("2 choix s'offrent a vous: entrez pour combattre ou une autre touche pour fuir ")
 
+        if attack == "":
             return True
         else :
             return False
@@ -40,7 +41,13 @@ class Arena:
             strike=self.combatant_2.attack(self.combatant_1.agility)
             if strike == 0:
                 print("l'attaque a echoué")
-            else:
+                mage = Factory()
+                if self.attack_or_escape()==True and mage.player_choose == Wizard(250) and self.wizzard.heal() == True:
+                    print("vous pouvez vous soignez ou attaqué, votre mana !".format(Wizard.mana))
+                    if input("") == "h" :
+                        add_life = input("combien de vie ?--->" )
+                        wizzard.heal(add_life)
+
                 if self.combatant_1.defense >= strike:
                    self.combatant_1.defense-=strike
                 else:

@@ -1,11 +1,11 @@
-
+from character.extends_of_character import *
 class Factory():
 
-    def __init__(self,player_choose,pc_choose):
-        self.player_choose =["warrior","wizard","archer"]
+    def __init__(self):
+        self.player_choose =None
         self.pc_choose = None
 
-    def enter_player(self,enter_player):
+    def enter_player(self):
         enter_player = input("choississez votre avatar entre warrior,wizard et archer","--->")
 
         if enter_player == "warrior":
