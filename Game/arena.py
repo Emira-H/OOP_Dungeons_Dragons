@@ -18,9 +18,7 @@ class Arena:
             return False
 
 
-    def combat(self):
-
-            if self.attack_or_escape():
+    def dammage_combatant1(self):
                 strike=self.combatant_1.attack(self.combatant_2.agility)
 
                 if strike == 0:
@@ -31,25 +29,36 @@ class Arena:
                     else:
                         combatant_2.life -= (strike - combatant_2.defense)
                         combatant_2.defense = 0
-            else: 
-                print("vous fuyez!!!!!!!!!")
+                        if combatant_2.life<= 0:
+                            combatant_2.life = 0
+                print(combatant_1)
+                print(combatant_2)
 
 
-    def dommage(self,ennemie,combatant):
-        a=enemie.attack(combatant.agility)
-        if ennemie.defense <= 0:
-            ennemie.life -= commbatant.attack
 
-        elif ennemie.defense >= commbatant.attack:
-            ennemie.defense -= commbatant.attack
+    def dammage_combatant2(self):
+            strike=self.combatant_2.attack(self.combatant_1.agility)
+            if strike == 0:
+                print("l'attaque a echoué")
+            else:
+                if combatant_1.defense >= strike:
+                    combatant_1.defense-=strike
+                else:
+                    combatant_1.life -= (strike - combatant_1.defense)
+                    combatant_1.defense = 0
+                    if combatant_1.life <=0:
+                        combatant_1.life=0
+            print(combatant_1)
+            print(combatant_2)
 
-        else :
-            ennemie.life -=(combatant.ennemie.defense)
-            ennemie.defense = 0
 
-    def dead(self,vie_hero,vie_monstre):
-        vie_hero = self.combatant_1
-        vie_monstre = self.combatant_2
-
-        while vie_hero > 0 and vie_monstre > 0:
-            Arena.combat()
+    def battle(self):
+        while combatant_1.life > 0 and combatant_2.life > 0 and self.attack_or_escape():
+            self.dammage_combatant1()
+            self.dammage_combatant2()
+        if combatant_1.life =0:
+            print("Vous avez gagné!")
+        elif combatant_2.life = 0:
+            print("Vous avez perdu!")
+        else:
+            print("Vous fuyez l'ennemi!")
