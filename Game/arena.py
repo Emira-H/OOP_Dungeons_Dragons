@@ -1,4 +1,4 @@
-from factory import Factory
+
 
 
 class Arena:
@@ -24,15 +24,15 @@ class Arena:
                 if strike == 0:
                     print("l'attaque a echoué")
                 else:
-                    if combatant_2.defense >= strike:
-                        combatant_2.defense-=strike
+                    if self.combatant_2.defense >= strike:
+                        self.combatant_2.defense-=strike
                     else:
-                        combatant_2.life -= (strike - combatant_2.defense)
-                        combatant_2.defense = 0
-                        if combatant_2.life<= 0:
-                            combatant_2.life = 0
-                print(combatant_1)
-                print(combatant_2)
+                        self.combatant_2.life -= (strike - self.combatant_2.defense)
+                        self.combatant_2.defense = 0
+                        if self.combatant_2.life<= 0:
+                           self.combatant_2.life = 0
+                print(self.combatant_1)
+                print(self.combatant_2)
 
 
 
@@ -41,24 +41,24 @@ class Arena:
             if strike == 0:
                 print("l'attaque a echoué")
             else:
-                if combatant_1.defense >= strike:
-                    combatant_1.defense-=strike
+                if self.combatant_1.defense >= strike:
+                   self.combatant_1.defense-=strike
                 else:
-                    combatant_1.life -= (strike - combatant_1.defense)
-                    combatant_1.defense = 0
-                    if combatant_1.life <=0:
-                        combatant_1.life=0
-            print(combatant_1)
-            print(combatant_2)
+                    self.combatant_1.life -= (strike - self.combatant_1.defense)
+                    self.combatant_1.defense = 0
+                    if self.combatant_1.life <=0:
+                        self.combatant_1.life=0
+            print(self.combatant_1)
+            print(self.combatant_2)
 
 
     def battle(self):
-        while combatant_1.life > 0 and combatant_2.life > 0 and self.attack_or_escape():
+        while self.combatant_1.life > 0 and self.combatant_2.life > 0 and self.attack_or_escape():
             self.dammage_combatant1()
             self.dammage_combatant2()
-        if combatant_1.life =0:
+        if self.combatant_2.life == 0:
             print("Vous avez gagné!")
-        elif combatant_2.life = 0:
+        elif self.combatant_1.life == 0:
             print("Vous avez perdu!")
         else:
-            print("Vous fuyez l'ennemi!")
+            print("Vous fuyez l'ennemi!","FIN DE PARTIE")
