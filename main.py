@@ -1,11 +1,10 @@
 from character.extends_of_character import *
-from Game.extends_of_game import *
+from Game.arena import Arena
+from factory import Factory
 
-adv1=Wizard(250)
-adv1.name="emira"
-print(adv1)
-adv2=Wolf()
 
-print(adv2)
-a=Arena(adv1,adv2)
-a.part()
+factory=Factory()
+var1 = factory.enter_player()
+var2 = factory.pc_random()
+instance_de_areana=factory.war_zone(var1,var2)
+instance_de_areana.battle()
